@@ -23,23 +23,21 @@ export default function App() {
     setSearchText(text)
     console.log(searchText);
     if (text) {
-      // Inserted text is not blank
-      // Filter the masterDataSource and update FilteredDataSource
+      
       const filter = Data.filter(
         function (item) {
-          // Applying filter for the inserted text in search bar
+          
           const inData = item.title
             ? item.title.toLowerCase()
             : ''.toLowerCase();
           const textData = text.toLowerCase();
           return inData.indexOf(textData) > -1;
-          // return inData === textData ? textData : null;
+         
         }
       );
       setData(filter);
     } else if (text === '') {
-      // Inserted text is blank
-      // Update FilteredDataSource with masterDataSource
+    
       setData(newData)
 
     }
